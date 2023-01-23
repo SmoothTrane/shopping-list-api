@@ -1,6 +1,6 @@
 // ./src/index.js
 require("dotenv").config();
-import sslRedirect from "heroku-ssl-redirect";
+const sslRedirect = require("heroku-ssl-redirect");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
