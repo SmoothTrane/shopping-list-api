@@ -30,6 +30,7 @@ app.get("/item", (req, res) => {
     itemController
       .getAllItems()
       .then((items) => {
+        console.log(items);
         res.send(items);
       })
       .catch((error) => {
