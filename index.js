@@ -9,7 +9,6 @@ const itemController = require("./controllers/itemController");
 const uri = process.env.DB_URI;
 const app = express();
 
-console.log(uri);
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.use(bodyParser.json());
