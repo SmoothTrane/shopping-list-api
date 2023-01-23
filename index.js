@@ -1,6 +1,5 @@
 // ./src/index.js
 require("dotenv").config();
-const sslRedirect = require("heroku-ssl-redirect");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -11,8 +10,6 @@ const uri = process.env.DB_URI;
 const app = express();
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-app.use(sslRedirect());
 
 app.use(bodyParser.json());
 
