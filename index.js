@@ -1,10 +1,9 @@
 // ./src/index.js
 require("dotenv").config();
+import sslRedirect from "heroku-ssl-redirect";
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const helmet = require("helmet");
-const morgan = require("morgan");
 const mongoose = require("mongoose");
 const itemController = require("./controllers/itemController");
 
@@ -13,13 +12,11 @@ const app = express();
 
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-app.use(helmet());
+app.use(sslRedirect());
 
 app.use(bodyParser.json());
 
 app.use(cors());
-
-app.use(morgan("combined"));
 
 app.get("/", (req, res) => {
   res.send([]);
