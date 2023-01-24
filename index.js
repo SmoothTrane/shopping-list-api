@@ -24,7 +24,6 @@ app.get("/item", (req, res) => {
     itemController
       .getAllItems()
       .then((items) => {
-        console.log(items);
         res.send(items);
       })
       .catch((error) => {
@@ -106,3 +105,5 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.warn(`App listening on http://localhost:${PORT}`);
 });
+
+module.exports = app;
